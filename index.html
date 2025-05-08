@@ -2,13 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+      <title>My Blog</title>
+      <style>
+        body.dark-mode {
+          background-color: #121212;
+          color: white;
+        }
+    
+        .toggle-btn {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+        }
+      </style> 
     
 </head>
 <body>
+  <!-- adding the dark mode -->
+  <button id="darkModeBtn" class="btn btn-dark top-right">Dark Mode</button>
+
+
     <!-- Navbar -->
      
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -65,9 +81,11 @@
                 <h2 class="text-center" style="color: #2d0ed8;">Latest Posts</h2>
 
     <!-- TEST -->
-     <!-- Card 1 -->
+     
     <div class="container">
       <div class="row">
+
+        <!-- Card 1 -->   
         <div class="col-md-4">
           <div class="card">
             <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
@@ -77,8 +95,9 @@
             </div>
           </div>
         </div>
+
         <!-- Card 2 -->
-        <div class="col-md-4">
+      
           <div class="card">
             <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
             <div class="card-body">
@@ -86,9 +105,9 @@
               <p class="card-text">As we stand on the cusp of this new era, let's explore the transformative power of these cutting-edge discoveries and their potential to revolutionize our world.</p>
             </div>
           </div>
-        </div>
+      
         <!-- Card 3 -->
-        <div class="col-md-4">
+        
           <div class="card">
             <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
             <div class="card-body">
@@ -96,9 +115,9 @@
               <p class="card-text">As we stand on the cusp of this new era, let's explore the transformative power of these cutting-edge discoveries and their potential to revolutionize our world.</p>
             </div>
           </div>
-        </div>
-      </div>
+      </div>  
     </div>
+    
     
                 
                 
@@ -111,9 +130,26 @@
             © 2025 My Blog:
             <a class="text-dark" href="#">myblog.com</a>
         </div>
+
+    
         
 
-
+        <script>
+          const button = document.getElementById('darkModeBtn');
+          button.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+              button.textContent = 'Light Mode';
+              button.classList.remove('btn-dark');
+              button.classList.add('btn-light');
+            } else {
+              button.textContent = 'Dark Mode';
+              button.classList.remove('btn-light');
+              button.classList.add('btn-dark');
+            }
+          });
+        </script>
+        
 
     
 </body>
